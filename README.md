@@ -1,4 +1,4 @@
-Predicting Fuel Efficiency of Vehicles
+Predicting Fuel Efficiency of Vehicles:
 In this series, we'd be going from data collection to deploying the Machine Learning model:
 1.	Data Collection - we are using the classic Auto MPG dataset from UCI ML Repository, I have already collected data and stored it in auto-mpg.data .
 2.	Define Problem Statement - We'll frame the problem based on the dataset description and initial exploration.
