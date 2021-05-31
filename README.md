@@ -88,14 +88,14 @@ We have created two pipelines:
 
 
 ## Traning Models:
-1. Linear Regression
+* Linear Regression
  ![](/image/linear.png)
  Through linear regression we get mean squared error of 2.95 which is good but still we make decision after comparing it with other models. 
-2. Decision Tree
+* Decision Tree
  ![](/image/tree.png)
  Although the error has reduced but still we will go with one more model and compare the performance
-3. Random Forest
-![](/image/random.png)
+* Random Forest
+ ![](/image/random.png)
 Here error which we received is 0 but no model can be perfect. This means overfitting has occured. Because of similar scenario, we don't touch our test data until we are sure of the efficiency of our model.
 
 ## Model Validation using Cross Validation
