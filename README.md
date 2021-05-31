@@ -19,18 +19,19 @@ Our aim here is to predict the MPG value for a vehicle given we have other attri
 # First Notebook
 
 ### EDA
-1) Check for data types of columns
+* Check for data types of columns
 ![](/image/data_type.png)
 ![](/image/describe.png)
-2) Check for Null values
+
+* Check for Null values
    Distribution seems to be left skewed so let's use median as impute method
    ```python
    median=data['Horsepower'].median()
    data['Horsepower']=data['Horsepower'].fillna(median)
    data.info()
    ```
-3) Check for outliers
-4) Look for category distribution in categorical columns
+* Check for outliers
+* Look for category distribution in categorical columns
    As no column has dtype as object but few columns value are repetitive i.e cylinders and Origin
    Origin varable looks like a country code. Let's convert it by mapping it to specific values.
    ```python
@@ -41,18 +42,18 @@ Our aim here is to predict the MPG value for a vehicle given we have other attri
     }
     data.head()
    ```
-5) Plot for correlation
+* Plot for correlation
    We will use pairplots to get an intuition of potential correlations. Pairplot gives you brief overview as how variables relate to each other.
    ![](/image/pairplot.png)
    We can see that [Weight, Horsepower,Displacement] has a relation with our target variable. So, we will hypothesize that group of given attributes affect the target            variables.
    * Checking Correaltion Matrix with MPG
     ![](/image/corr.png)
    We saw that [Weight, Horsepower,Displacement,Cylinders] are negatively affecting the target
-6) Look for new variables
- *  Displacement on power
- *  Weight on cylinder
- *  Acceleration on power
- *  Acceleration on cylinder
+* Look for new variables
+ 1) Displacement on power
+ 2) Weight on cylinder
+ 3) Acceleration on power
+ 4) Acceleration on cylinder
 ```python
  data['displacement_on_power'] = data['Displacement'] / data['Horsepower']
 data['weight_cylinder'] = data['Weight'] / data['Cylinders']
