@@ -20,7 +20,8 @@ Our aim here is to predict the MPG value for a vehicle given we have other attri
 
 ### EDA
 1) Check for data types of columns
-![]()
+![](/image/data_type.png)
+![](/image/describe.png)
 2) Check for Null values
    Distribution seems to be left skewed so let's use median as impute method
    ```python
@@ -42,26 +43,26 @@ Our aim here is to predict the MPG value for a vehicle given we have other attri
    ```
 5) Plot for correlation
    We will use pairplots to get an intuition of potential correlations. Pairplot gives you brief overview as how variables relate to each other.
-   ![]()
+   ![](/image/pairplot.png)
    We can see that [Weight, Horsepower,Displacement] has a relation with our target variable. So, we will hypothesize that group of given attributes affect the target            variables.
    * Checking Correaltion Matrix with MPG
-    ![]()
+    ![](/image/corr.png)
    We saw that [Weight, Horsepower,Displacement,Cylinders] are negatively affecting the target
 6) Look for new variables
  *  Displacement on power
  *  Weight on cylinder
  *  Acceleration on power
  *  Acceleration on cylinder
- ```python
+```python
  data['displacement_on_power'] = data['Displacement'] / data['Horsepower']
 data['weight_cylinder'] = data['Weight'] / data['Cylinders']
 data['acc_power'] = data['Acceleration'] / data['Horsepower']
 data['acc_cylinder'] = data['Acceleration'] / data['Cylinders']
 
 corr_matrix= data.corr()
-corr_matrix['MPG'].sort_values(ascending=False)
+corr_matrix['MPG'].sort_values(ascending=False)]
 ```
-![]()
+![](/image/new.png)
 Here we observe that two new features have strong effect on the target i.e acc_cylinder and acc_power. For same reason it is advisable to create new features and check their relationship with target so we can obtain more information about data.
 
 # Second Notebook
@@ -89,20 +90,20 @@ We have created two pipelines:
 
 ## Traning Models:
 1) Linear Regression
- ![]()
+ ![](/image/linear.png)
  Through linear regression we get mean squared error of 2.95 which is good but still we make decision after comparing it with other models. 
 2) Decision Tree
- ![]()
+ ![](/image/tree.png)
  Although the error has reduced but still we will go with one more model and compare the performance
 3) Random Forest
-![]()
+![](/image/random.png)
 Here error which we received is 0 but no model can be perfect. This means overfitting has occured. Because of similar scenario, we don't touch our test data until we are sure of the efficiency of our model.
 
 ## Model Validation using Cross Validation
 K-cross valiation technique divides the training data into K distinct subsets called folds, then it trains on individual fold and evaluate the model K times, picking a different fold for evaluation every time and training on other K-1 folds.
 
 Result is an array containing the K evaluation scores. Result of all three models.
-![]()
+![](/image/cross.png)
 
 As we can see that RandomForestRegressor provides us with the minimum error so we will continue with the same.
 
@@ -130,5 +131,4 @@ grid_search.fit(prepared_data,data_label)
 ```
 After, finding out the best parameter we view features importance and found that  features [Weight, Model Year, Horsepower, Displacement, Cylinders] have got the larger number.
 
-## Result:
-We test our data on three models, Linear Regression, Decision Tree Regressor and Random Forest Regressor and latter was giving us the minimum error.
+
