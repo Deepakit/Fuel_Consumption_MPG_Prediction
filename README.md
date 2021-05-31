@@ -20,8 +20,8 @@ Our aim here is to predict the MPG value for a vehicle given we have other attri
 
 ### EDA
 * Check for data types of columns
-![](/image/data_type.png)
-![](/image/describe.png)
+* ![](/image/data_type.png)
+* ![](/image/describe.png)
 
 * Check for Null values
    Distribution seems to be left skewed so let's use median as impute method
