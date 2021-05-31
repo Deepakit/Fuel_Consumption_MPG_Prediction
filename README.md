@@ -49,11 +49,9 @@ Our aim here is to predict the MPG value for a vehicle given we have other attri
    * Checking Correaltion Matrix with MPG
     ![](/image/corr.png)
    We saw that [Weight, Horsepower,Displacement,Cylinders] are negatively affecting the target
-* Look for new variables
- 1) Displacement on power
- 2) Weight on cylinder
- 3) Acceleration on power
- 4) Acceleration on cylinder
+* Look for new variables:
+ Displacement on power,Weight on cylinder,Acceleration on power,Acceleration on cylinder
+ 
 ```python
  data['displacement_on_power'] = data['Displacement'] / data['Horsepower']
 data['weight_cylinder'] = data['Weight'] / data['Cylinders']
